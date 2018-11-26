@@ -45,11 +45,11 @@ export const StyledSolidButton = styled.button`
     props.disabled || props.gradientTheme === 'none'
       ? 'none'
       : props.gradientTheme
-        ? Gradient(
-            eval(`props.theme.${props.gradientTheme}.alt`),
-            eval(`props.theme.${props.gradientTheme}.default`),
-          )
-        : Gradient(props.theme.brand.alt, props.theme.brand.default)};
+      ? Gradient(
+          eval(`props.theme.${props.gradientTheme}.alt`),
+          eval(`props.theme.${props.gradientTheme}.default`),
+        )
+      : Gradient(props.theme.brand.alt, props.theme.brand.default)};
   color: ${props => props.theme.text.reverse};
 
   &:hover {
