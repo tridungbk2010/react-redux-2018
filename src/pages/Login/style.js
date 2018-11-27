@@ -1,20 +1,29 @@
 import styled from 'styled-components';
 
 export const FormLayout = styled.div`
-  background-color: #f5f6f7;
-  widht: 100%;
-  height: 100%;
+  width: 100%;
+  padding-top: 40px;
 `;
 
 export const FormWrapper = styled.div`
-  width: 480px;
-  height: 100%;
+  width: 400px;
+  height: auto;
   margin: 0 auto;
   background: #fff;
   border-radius: 6px;
   box-shadow: 0 10px 21px #e7eeef;
   padding-left: 0px;
   padding: 30px 45px;
-  position: relative;
   text-align: left;
+  .hint {
+    background-color: #e0e0e0;
+    font-size: 11px;
+    font-style: italic;
+    padding: 4px;
+    border-radius: 3px;
+  }
+`;
+
+export const StyledFormControl = styled.div`
+  margin: 15px 0;
 `;

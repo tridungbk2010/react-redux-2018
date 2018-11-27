@@ -1,7 +1,8 @@
 import React, { Suspense } from 'react';
-import { hot } from 'react-hot-loader';
+import PropTypes from 'prop-types';
 import { Router, Redirect } from '@reach/router';
 import { Dashboard, Home, LoginForm } from './routes';
+import { Spinner } from '../styles/global-styles';
 
 const PrivateRoute = ({
   component: Component,
@@ -16,16 +17,23 @@ const PrivateRoute = ({
   );
 };
 
-const Routes = () => {
+const Routes = ({ isAuthenticated }) => {
   return (
-    <Suspense fallback={<div>loading...</div>}>
+    <Suspense fallback={<Spinner />}>
       <Router>
         <Home path="/" />
-        <PrivateRoute path="dashboard" component={Dashboard} />
+        <PrivateRoute
+          path="dashboard"
+          component={Dashboard}
+          isAuthenticated={isAuthenticated}
+        />
         <LoginForm path="login" />
       </Router>
     </Suspense>
   );
 };
 
-export default hot(module)(Routes);
+Routes.propTypes = {
+  isAuthenticated: PropTypes.bool.isRequired,
+};
+export default Routes;
