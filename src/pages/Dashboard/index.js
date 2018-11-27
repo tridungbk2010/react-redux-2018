@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { increment, decrement } from '../../store/actions';
+import { getCounter } from '../../store/selectors';
 import Button from '../../components/Button';
-import { increment, decrement } from '../../actions/counter';
-import { counterFromStore } from '../../selectors/counter-selector';
 
-const Home = ({ counter, increment, decrement }) => {
+const Home = memo(({ counter, increment, decrement }) => {
   return (
     <div>
       <Button onClick={() => increment()} label="+" />
@@ -13,7 +13,7 @@ const Home = ({ counter, increment, decrement }) => {
       <Button onClick={() => decrement()} label="-" />
     </div>
   );
-};
+});
 
 Home.propTypes = {
   counter: PropTypes.number.isRequired,
@@ -24,7 +24,7 @@ Home.propTypes = {
 // };
 
 const mapState = state => ({
-  counter: counterFromStore(state),
+  counter: getCounter(state),
 });
 export default connect(
   mapState,

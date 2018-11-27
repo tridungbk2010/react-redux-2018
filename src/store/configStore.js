@@ -1,18 +1,21 @@
-import { createStore, compose, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
-import rootReducer from '../reducers';
+import { configureStore, getDefaultMiddleware } from 'redux-starter-kit';
+import reducer from './reducer';
+import logger from 'redux-logger';
+import { reduxBatch } from '@manaflair/redux-batch';
 
-const composeEnhancers =
-  (process.env.NODE_ENV !== 'production' &&
-    typeof window !== 'undefined' &&
-    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
-  compose;
+const middleware = [...getDefaultMiddleware(), logger];
+
+const preloadedState = {
+  counter: 10,
+};
 
 export const initStore = initialState => {
-  const store = createStore(
-    rootReducer,
-    initialState || {},
-    composeEnhancers(applyMiddleware(thunk)),
-  );
+  const store = configureStore({
+    reducer,
+    middleware,
+    devTools: process.env.NODE_ENV !== 'production',
+    preloadedState,
+    enhancers: [reduxBatch],
+  });
   return store;
 };

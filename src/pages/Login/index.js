@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import { FormWrapper, FormLayout } from './style';
@@ -15,7 +15,7 @@ const SigninSchema = Yup.object().shape({
     .required('Required'),
 });
 
-const Login = () => {
+const Login = memo(() => {
   return (
     <FormLayout>
       <FormWrapper>
@@ -41,6 +41,6 @@ const Login = () => {
       </FormWrapper>
     </FormLayout>
   );
-};
+});
 
 export default Login;

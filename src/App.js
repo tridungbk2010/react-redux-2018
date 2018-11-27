@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { GlobalStyle } from './styles/reset.css';
+import { ThemeProvider } from 'styled-components';
 import { Link } from '@reach/router';
+import { theme } from './styles/theme';
 import Routes from './routes';
 
 class App extends Component {
@@ -13,7 +15,9 @@ class App extends Component {
           <Link to="login">Login</Link>
         </nav>
         <div>
-          <Routes />
+          <ThemeProvider theme={theme}>
+            <Routes />
+          </ThemeProvider>
         </div>
       </div>
     );
