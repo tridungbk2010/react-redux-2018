@@ -2,14 +2,14 @@ import React, { Suspense } from 'react';
 import PropTypes from 'prop-types';
 import { Router, Redirect } from '@reach/router';
 import { Dashboard, Home, LoginForm } from './routes';
-import { Spinner } from '../styles/global-styles';
+import { Spinner } from '../styles/common-styles';
 
 const PrivateRoute = ({
   component: Component,
   rest,
   isAuthenticated,
   ...props
-}: Props) => {
+}) => {
   return isAuthenticated ? (
     <Component {...props} />
   ) : (

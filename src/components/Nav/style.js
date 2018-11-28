@@ -20,5 +20,5 @@ export const StyledHeader = styled.div`
   justify-content: center;
   align-items: center;
   height: 40px;
-  background-color: ${props => props.theme.brand.alt};
+  background-color: ${props => props.theme.brand.dark};
 `;

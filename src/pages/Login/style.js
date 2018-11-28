@@ -12,7 +12,6 @@ export const FormWrapper = styled.div`
   background: #fff;
   border-radius: 6px;
   box-shadow: 0 10px 21px #e7eeef;
-  padding-left: 0px;
   padding: 30px 45px;
   text-align: left;
   .hint {

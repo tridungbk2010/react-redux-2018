@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { Gradient, Shadow, Transition, hexa } from '../../styles/global-styles';
+import { Gradient, Shadow, Transition, hexa } from '../../styles/common-styles';
 
 const baseButton = css`
   display: flex;

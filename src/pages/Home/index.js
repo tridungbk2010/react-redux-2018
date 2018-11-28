@@ -1,4 +1,3 @@
-// @flow
 import React from 'react';
 import { StyledHome } from './style';
 import Button from '../../components/Button';

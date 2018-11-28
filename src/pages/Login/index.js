@@ -13,9 +13,9 @@ import {
   getLoginLoading,
   getLoginError,
 } from '../../store/selectors';
-import { Spinner } from '../../styles/global-styles';
+import { Spinner } from '../../styles/common-styles';
 
-const SigninSchema = Yup.object().shape({
+const validation = Yup.object().shape({
   password: Yup.string()
     .min(6, 'Too Short!')
     .max(50, 'Too Long!')
@@ -42,7 +42,7 @@ const Login = memo(({ login, accountInfo, loading, error }) => {
             email: '',
             password: '',
           }}
-          validationSchema={SigninSchema}
+          validationSchema={validation}
           onSubmit={values => {
             login(values);
           }}
