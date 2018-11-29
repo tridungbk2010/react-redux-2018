@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { StyledSolidButton } from './style';
+import React from "react";
+import PropTypes from "prop-types";
+import { StyledSolidButton } from "./style";
 
 const Button = ({ onClick, label, fontSize, type, ...props }) => {
   return (
@@ -19,13 +19,13 @@ Button.propTypes = {
   label: PropTypes.string.isRequired,
   onClick: PropTypes.func,
   fontSize: PropTypes.number,
-  type: PropTypes.string,
+  type: PropTypes.string
 };
 
 Button.defaultProps = {
   onClick: null,
   fontSize: 14,
-  type: 'button',
+  type: "button"
 };
 
 export default Button;
