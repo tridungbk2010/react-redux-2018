@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from '@reach/router';
+import { logout } from 'store/actions';
+import { getAccountInfo } from 'store/selectors';
 import Button from '../Button';
-import { logout } from '../../store/actions';
-import { getAccountInfo } from '../../store/selectors';
 
 function Logout({ logout, accountInfo }) {
   return !!accountInfo.token ? (

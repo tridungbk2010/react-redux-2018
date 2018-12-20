@@ -1,9 +1,9 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { increment, decrement } from '../../store/actions';
-import { getCounter } from '../../store/selectors';
-import Button from '../../components/Button';
+import { increment, decrement } from 'store/actions';
+import { getCounter } from 'store/selectors';
+import Button from 'components/Button';
 
 const Home = memo(({ counter, increment, decrement }) => {
   return (

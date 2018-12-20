@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { GlobalStyle } from './styles/reset.css';
+import { GlobalStyle } from 'styles/reset.css';
 import { hot } from 'react-hot-loader';
 import { ThemeProvider } from 'styled-components';
-import { theme } from './styles/theme';
-import Routes from './routes';
-import Nav from './components/Nav';
-import { MENUS } from './routes/top-menus';
-import { getAccountInfo } from './store/selectors';
+import { theme } from 'styles/theme';
+import Routes from 'routes';
+import Nav from 'components/Nav';
+// import { MENUS } from 'routes/top-menus';
+import { getAccountInfo } from 'store/selectors';
 
 class App extends Component {
   render() {

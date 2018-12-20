@@ -4,16 +4,16 @@ import { connect } from 'react-redux';
 import { Formik, Form, Field } from 'formik';
 import { Redirect } from '@reach/router';
 import * as Yup from 'yup';
+import { FormInput } from 'components/Input';
+import Button from 'components/Button';
+import { login } from 'store/actions';
 import { FormWrapper, FormLayout, StyledFormControl } from './style';
-import { FormInput } from '../../components/Input';
-import Button from '../../components/Button';
-import { login } from '../../store/actions';
 import {
   getAccountInfo,
   getLoginLoading,
   getLoginError,
-} from '../../store/selectors';
-import { Spinner } from '../../styles/common-styles';
+} from 'store/selectors';
+import { Spinner } from 'styles/common-styles';
 
 const validation = Yup.object().shape({
   password: Yup.string()

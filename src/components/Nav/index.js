@@ -22,7 +22,11 @@ function Nav({ isAuthenticated }) {
   );
 }
 Nav.propTypes = {
-  menus: PropTypes.array.isRequired,
+  menus: PropTypes.array,
+};
+
+Nav.defaultProps = {
+  menus: [],
 };
 
 export default Nav;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { ErrorMessage } from './style';
-import { Input } from '../../styles/common-styles';
+import { Input } from 'styles/common-styles';
 
 export const FormInput = ({
   field, // { name, value, onChange, onBlur }
@@ -9,9 +9,8 @@ export const FormInput = ({
 }) => (
   <div>
     <Input type="text" {...field} {...props} />
-    {touched[field.name] &&
-      errors[field.name] && (
-        <ErrorMessage className="error">{errors[field.name]}</ErrorMessage>
-      )}
+    {touched[field.name] && errors[field.name] && (
+      <ErrorMessage className="error">{errors[field.name]}</ErrorMessage>
+    )}
   </div>
 );

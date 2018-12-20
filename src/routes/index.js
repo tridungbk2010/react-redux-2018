@@ -2,7 +2,7 @@ import React, { Suspense } from 'react';
 import PropTypes from 'prop-types';
 import { Router, Redirect } from '@reach/router';
 import { Dashboard, Home, LoginForm } from './routes';
-import { Spinner } from '../styles/common-styles';
+import { Spinner } from 'styles/common-styles';
 
 const PrivateRoute = ({
   component: Component,
