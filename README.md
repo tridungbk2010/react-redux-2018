@@ -1,2 +1,2 @@
-# react-redux-2018
-a simple boilerplate with redux thunk, styled-component, immer,
+# react-redux-2019
+a simple boilerplate with redux thunk, styled-component, immer, firebase authentication, real time notification
