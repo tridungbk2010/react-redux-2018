@@ -1,8 +1,16 @@
 import React, { Suspense } from 'react';
 import PropTypes from 'prop-types';
 import { Router, Redirect } from '@reach/router';
-import { Dashboard, Home, LoginForm } from './routes';
+import {
+  Dashboard,
+  Home,
+  LoginForm,
+  SignInPage,
+  SignUpPage,
+  AdminPage,
+} from './routes';
 import { Spinner } from 'styles/common-styles';
+import { SIGN_IN, SIGN_UP } from '../constants/routes';
 
 const PrivateRoute = ({
   component: Component,
@@ -22,6 +30,9 @@ const Routes = ({ isAuthenticated }) => {
     <Suspense fallback={<Spinner />}>
       <Router>
         <Home path="/" />
+        <AdminPage path="/admin" />
+        <SignInPage path={SIGN_IN} />
+        <SignUpPage path={SIGN_UP} />
         <PrivateRoute
           path="dashboard"
           component={Dashboard}

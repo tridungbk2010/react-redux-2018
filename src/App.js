@@ -9,6 +9,8 @@ import Routes from 'routes';
 import Nav from 'components/Nav';
 // import { MENUS } from 'routes/top-menus';
 import { getAccountInfo } from 'store/selectors';
+import Navigation from './components/Navigation';
+import { withAuthentication } from './components/Session';
 
 class App extends Component {
   render() {
@@ -19,7 +21,7 @@ class App extends Component {
         <GlobalStyle />
         <ThemeProvider theme={theme}>
           <>
-            <Nav isAuthenticated={isAuthenticated} />
+            <Navigation />
             <div
               style={{
                 backgroundColor: `#f5f6f7`,
@@ -46,4 +48,4 @@ const mapState = state => ({
   accountInfo: getAccountInfo(state),
 });
 
-export default connect(mapState)(hot(module)(App));
+export default connect(mapState)(hot(module)(withAuthentication(App)));
